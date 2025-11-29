@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VoldCloud — Hosting Panel</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg">
+  <header class="header">
+    <div class="brand">
+      <div class="logo">Vold<span>Cloud</span></div>
+      <nav class="nav">
+        <a href="#" id="show-plans">Planes</a>
+        <a href="#login" id="go-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>VoldCloud — Hosting profesional</h1>
+      <p>Panel de hosting simulado con diseño premium. Compra, accede y administra tu servidor.</p>
+      <div class="cta">
+        <button class="btn glow" id="btn-start">Ver planes</button>
+      </div>
+    </section>
+
+    <section class="plans" id="plans">
+      <h2>Planes</h2>
+      <div class="plan-grid">
+        <article class="card neon" data-plan="Básico" data-price="3.99" data-ram="1GB" data-cpu="1 vCPU">
+          <h3>Básico</h3>
+          <p class="price">$3.99 / mes</p>
+          <ul>
+            <li>1GB RAM</li>
+            <li>1 vCPU</li>
+            <li>1TB transferencia</li>
+          </ul>
+          <button class="btn-outline buy-btn">Comprar</button>
+        </article>
+
+        <article class="card neon" data-plan="Estándar" data-price="8.99" data-ram="2GB" data-cpu="2 vCPU">
+          <h3>Estándar</h3>
+          <p class="price">$8.99 / mes</p>
+          <ul>
+            <li>2GB RAM</li>
+            <li>2 vCPU</li>
+            <li>2TB transferencia</li>
+          </ul>
+          <button class="btn-outline buy-btn">Comprar</button>
+        </article>
+
+        <article class="card neon" data-plan="Premium" data-price="19.99" data-ram="8GB" data-cpu="4 vCPU">
+          <h3>Premium</h3>
+          <p class="price">$19.99 / mes</p>
+          <ul>
+            <li>8GB RAM</li>
+            <li>4 vCPU</li>
+            <li>Ilimitado</li>
+          </ul>
+          <button class="btn-outline buy-btn">Comprar</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="login-section" class="auth">
+      <h2>Login</h2>
+      <form id="loginForm" class="form">
+        <label>Email
+          <input type="email" id="loginEmail" required autocomplete="username" />
+        </label>
+        <label>Contraseña
+          <input type="password" id="loginPass" required autocomplete="current-password" />
+        </label>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <button class="btn glow" type="submit">Ingresar</button>
+          <button class="btn-outline" id="go-to-plans" type="button">Comprar plan</button>
+        </div>
+        <p id="loginMsg" class="muted"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Purchase Modal -->
+  <div id="purchaseModal" class="modal hidden">
+    <div class="modal-card neon">
+      <button class="close" id="closeModal">✕</button>
+      <h3 id="selectedPlanTitle">Comprar Plan</h3>
+      <form id="purchaseForm" class="form">
+        <label>Nombre
+          <input type="text" id="pname" required />
+        </label>
+        <label>Correo
+          <input type="email" id="pemail" required />
+        </label>
+        <label>Contraseña
+          <input type="password" id="ppass" required />
+        </label>
+        <div class="meta">
+          <p>Plan: <span id="metaPlan"></span></p>
+          <p>Precio: <span id="metaPrice"></span></p>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn glow" type="submit">Pagar y acceder</button>
+          <button class="btn-outline" type="button" id="cancelPurchase">Cancelar</button>
+        </div>
+        <p id="purchaseMsg" class="muted"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> VoldCloud — Todos los derechos reservados</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

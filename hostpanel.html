@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VoldCloud — Host Panel</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg">
+  <header class="header small">
+    <div class="brand">
+      <div class="logo">Vold<span>Cloud</span></div>
+      <nav class="nav">
+        <a href="index.html" id="logoutBtn">Cerrar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container panel">
+    <aside class="sidebar">
+      <div class="server-card neon">
+        <h4 id="srv-name">Servidor</h4>
+        <p id="srv-plan">Plan: --</p>
+        <p id="srv-ram">RAM: --</p>
+        <p id="srv-cpu">CPU: --</p>
+      </div>
+
+      <nav class="side-nav">
+        <button class="side-btn" data-view="dashboard">Dashboard</button>
+        <button class="side-btn" data-view="console">Consola</button>
+        <button class="side-btn" data-view="files">File Manager</button>
+      </nav>
+    </aside>
+
+    <section class="panel-main">
+      <div id="view-dashboard" class="view active">
+        <h2>Dashboard</h2>
+        <div class="info-grid">
+          <div class="info-card neon">
+            <h3>Uso CPU</h3>
+            <p id="cpu-usage">12%</p>
+          </div>
+          <div class="info-card neon">
+            <h3>RAM usada</h3>
+            <p id="ram-usage">512MB</p>
+          </div>
+          <div class="info-card neon">
+            <h3>Uptime</h3>
+            <p id="uptime">2d 4h</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="view-console" class="view">
+        <h2>Consola</h2>
+        <div class="console neon-console">
+          <div id="consoleOutput" class="console-output"></div>
+          <form id="consoleForm" class="console-input">
+            <input id="consoleInput" autocomplete="off" placeholder="Escribe 'help' para empezar" />
+            <button class="btn" type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="view-files" class="view">
+        <h2>File Manager</h2>
+        <div class="file-actions">
+          <input id="newFilename" placeholder="nombre.txt" />
+          <button class="btn" id="createFileBtn">Crear archivo</button>
+        </div>
+        <div id="fileList" class="file-list neon"></div>
+        <div id="fileEditor" class="file-editor neon hidden">
+          <h3 id="editingFileName"></h3>
+          <textarea id="fileContent" rows="10"></textarea>
+          <div style="display:flex;gap:8px;">
+            <button class="btn glow" id="saveFileBtn">Guardar</button>
+            <button class="btn-outline" id="closeEditor">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer small">
+    <p>© VoldCloud</p>
+  </footer>
+
+  <script src="js/panel.js"></script>
+</body>
+</html>
